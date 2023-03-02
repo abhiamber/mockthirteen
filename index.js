@@ -34,11 +34,11 @@ app.get("/score", async (req, res) => {
   }
 });
 app.post("/score", async (req, res) => {
-  let { name, level } = req.body;
+  let { name, score } = req.body;
 
   try {
-    let score = new ScoreModel({ name, level });
-    await score.save();
+    let scores = new ScoreModel({ name, score });
+    await scores.save();
     res.send({ messg: "YOur Welcome you can play again" });
   } catch (e) {
     console.log(e.emssage);
