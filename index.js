@@ -16,9 +16,8 @@ app.get("/", async (req, res) => {
 app.get("/question", async (req, res) => {
   let arr = [];
   for (let i = 0; i < 10; i++) {
-    let x = Math.random() * 8;
-    x = Math.floor(x);
-    let r = (Math.random() + 1).toString(36).substring(x);
+    
+    let r = (Math.random() + 1).toString(36).substring(6);
     arr.push(r);
   }
   res.send({ arr });
